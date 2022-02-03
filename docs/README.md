@@ -12,6 +12,7 @@ $ go run ./main.go
 
 #Requirements
 
+* vim 8.2.600
 * go 1.14.2
 
 #Author
