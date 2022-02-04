@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
+	"github.com/smallstone1109/typingGame/internal"
+	"github.com/smallstone1109/typingGame/pkg"
 	"os"
 	"time"
-	"typingGame/internal"
-	"typingGame/pkg"
 )
 
 // main
