@@ -1,20 +1,20 @@
-#typingGame
+# typingGame
 
-typingGame
+* typingGame
 
-#Description
+## Description
 
-You can choose the gameMode want to play from two modes
+* You can choose the gameMode want to play from two modes
 
-#Usage
+## Usage
 
-$ go run ./main.go
+* $ 'git clone https://github.com/stone0514/typingGame.git'
+* $ 'go run ./main.go'
 
-#Requirements
+## Requirements
 
-* vim 8.2.600
-* go 1.14.2
+* go 1.17.6 darwin/amd64
 
-#Author
+## Author
 
-* smallstone
+* stone0514

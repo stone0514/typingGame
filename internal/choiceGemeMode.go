@@ -26,7 +26,7 @@ func ChoiceGameMode(stdin io.Reader) string {
 		return "internal/textData/words.txt"
 	case val.Text() == "2":
 		return "internal/textData/romazi.txt"
-
+		// other inputs
 	default:
 		return "internal/textData/words.txt"
 	}

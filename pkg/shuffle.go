@@ -19,6 +19,7 @@ import (
  *----------------------------------------
  */
 func Shuffle(data []string) {
+	// shuffle arguments
 	n := len(data)
 	rand.Seed(time.Now().Unix())
 	for i := n - 1; i >= 0; i-- {
