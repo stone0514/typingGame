@@ -11,6 +11,11 @@
 * $ `git clone https://github.com/stone0514/typingGame.git`
 * $ `go run ./main.go`
 
+* if there is no go.mod under the typingGameDirectory
+* type in the typingGameDirectory
+* $ `go mod init`
+* $ `go run ./main.go`
+
 ## Requirements
 
 * go 1.17.6 darwin/amd64
