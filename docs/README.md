@@ -8,8 +8,8 @@
 
 ## Usage
 
-* $ 'git clone https://github.com/stone0514/typingGame.git'
-* $ 'go run ./main.go'
+* $ `git clone https://github.com/stone0514/typingGame.git`
+* $ `go run ./main.go`
 
 ## Requirements
 
