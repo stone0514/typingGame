@@ -13,20 +13,20 @@ func main() {
 
 	fmt.Println(m)
 
-	// create question & parse
+	// output question & ngram(uni-gram)
 	for k, v := range m {
 		// japanese
-		fmt.Println(k)
+		fmt.Println("k :", k)
 		// hiragana forAnalysis
-		fmt.Println(v)
+		fmt.Println("v: ", v)
 		tgtText := v
-		fmt.Println(tgtText)
-		bigrams, err := ngram(tgtText, 1)
+		fmt.Println("tgtText: ", tgtText)
+		uni, err := ngram(tgtText, 1)
 		if err != nil {
-			fmt.Println(err)
+			fmt.Println("error : ", err)
 		}
 		// parse result
-		fmt.Println("bigrams: ", bigrams)
+		fmt.Println("uni: ", uni)
 	}
 
 	// create dictionary
@@ -34,40 +34,42 @@ func main() {
 		"あ": {"a"},
 		"い": {"i", "yi"},
 	}
-	fmt.Println(dictionary)
-	fmt.Println(dictionary["あ"])
-	fmt.Println(dictionary["い"])
+	fmt.Println("dictionary: ", dictionary)
+	fmt.Println("dictionary test: ", dictionary["あ"])
+	fmt.Println("dictionary test2: ", dictionary["い"])
 
+	// dictionary check
 	for k, v := range dictionary {
-		fmt.Println(k)
-		fmt.Println(v)
+		fmt.Println("k: ", k)
+		fmt.Println("v: ", v)
 	}
 
-	// parse sample
-	//tgtText := "本当に今日は良い天気ですね"
+	// ngram sample(uni-gram)
+	// tgtText := "本当に今日は良い天気ですね"
 	tgtText := "あいあいあい"
-	bigrams, err := ngram(tgtText, 1)
+	uni, err := ngram(tgtText, 1)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("error: ", err)
 	}
-	fmt.Println("bigrams: ", bigrams)
+	fmt.Println("uni: ", uni)
 
-	// correct/wrong judgment
-	for i := 0; len(bigrams) > i; i++ {
+	// parse uni-gram = dictionary(v hiragana)
+	ret := make([]string, 0, 0)
+	for i := 0; len(uni) > i; i++ {
 		for k, v := range dictionary {
-			if k == bigrams[i] {
+			if k == uni[i] {
 				fmt.Println("i route: ", v)
 				fmt.Println("k: ", k)
 				fmt.Println("v: ", v)
+				ret = append(ret, v...)
 			}
 		}
-
 	}
+	fmt.Println("ret: ", ret)
 	fmt.Println("out")
-
 }
 
-// parse hiragana func
+// create ngram for testFunc
 func ngram(tgtText string, n int) ([]string, error) {
 	spltText := strings.Split(tgtText, "")
 	var ngrams []string

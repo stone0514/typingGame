@@ -25,9 +25,11 @@ func ChoiceGameMode(stdin io.Reader) string {
 	case val.Text() == "1":
 		return "internal/textData/words.txt"
 	case val.Text() == "2":
+		// TODO return "Japanese"
 		return "internal/textData/romazi.txt"
 		// other inputs
 	default:
+		// TODO return "Japanese"
 		return "internal/textData/words.txt"
 	}
 }

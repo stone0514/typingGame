@@ -36,6 +36,7 @@ func main() {
 	fmt.Printf("1:English, 2:Japanese\n")
 	gameMode := internal.ChoiceGameMode(os.Stdin)
 
+	// TODO if gemeMode != "Japanese" {
 	//read word & shuffle
 	words := pkg.ReadLine(gameMode)
 	pkg.Shuffle(words)
