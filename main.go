@@ -9,7 +9,7 @@ import (
 	"github.com/stone0514/typingGame/pkg"
 )
 
-// main
+// main Document
 /*
  *--------------------------------------------------------------
  * @brief main

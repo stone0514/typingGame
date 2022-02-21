@@ -44,12 +44,27 @@ func main() {
 	}
 
 	// parse sample
-	tgtText := "本当に今日は良い天気ですね"
+	//tgtText := "本当に今日は良い天気ですね"
+	tgtText := "あいあいあい"
 	bigrams, err := ngram(tgtText, 1)
 	if err != nil {
 		fmt.Println(err)
 	}
 	fmt.Println("bigrams: ", bigrams)
+
+	// correct/wrong judgment
+	for i := 0; len(bigrams) > i; i++ {
+		for k, v := range dictionary {
+			if k == bigrams[i] {
+				fmt.Println("i route: ", v)
+				fmt.Println("k: ", k)
+				fmt.Println("v: ", v)
+			}
+		}
+
+	}
+	fmt.Println("out")
+
 }
 
 // parse hiragana func
