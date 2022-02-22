@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"github.com/stone0514/typingGame/internal"
 	"strings"
 )
 
@@ -13,20 +14,20 @@ func main() {
 
 	fmt.Println(m)
 
-	// output question & ngram(uni-gram)
+	// create question & parse
 	for k, v := range m {
 		// japanese
-		fmt.Println("k :", k)
+		fmt.Println(k)
 		// hiragana forAnalysis
-		fmt.Println("v: ", v)
+		fmt.Println(v)
 		tgtText := v
-		fmt.Println("tgtText: ", tgtText)
-		uni, err := ngram(tgtText, 1)
+		fmt.Println(tgtText)
+		bigrams, err := ngram(tgtText, 1)
 		if err != nil {
-			fmt.Println("error : ", err)
+			fmt.Println(err)
 		}
 		// parse result
-		fmt.Println("uni: ", uni)
+		fmt.Println("bigrams: ", bigrams)
 	}
 
 	// create dictionary
@@ -34,42 +35,50 @@ func main() {
 		"あ": {"a"},
 		"い": {"i", "yi"},
 	}
-	fmt.Println("dictionary: ", dictionary)
-	fmt.Println("dictionary test: ", dictionary["あ"])
-	fmt.Println("dictionary test2: ", dictionary["い"])
+	fmt.Println(dictionary)
+	fmt.Println(dictionary["あ"])
+	fmt.Println(dictionary["い"])
 
-	// dictionary check
 	for k, v := range dictionary {
-		fmt.Println("k: ", k)
-		fmt.Println("v: ", v)
+		fmt.Println(k)
+		fmt.Println(v)
 	}
 
-	// ngram sample(uni-gram)
-	// tgtText := "本当に今日は良い天気ですね"
+	// parse sample
+	//tgtText := "本当に今日は良い天気ですね"
 	tgtText := "あいあいあい"
-	uni, err := ngram(tgtText, 1)
+	bigrams, err := ngram(tgtText, 1)
 	if err != nil {
-		fmt.Println("error: ", err)
+		fmt.Println(err)
 	}
-	fmt.Println("uni: ", uni)
+	fmt.Println("bigrams: ", bigrams)
 
-	// parse uni-gram = dictionary(v hiragana)
-	ret := make([]string, 0, 0)
-	for i := 0; len(uni) > i; i++ {
+	// correct/wrong judgment
+	for i := 0; len(bigrams) > i; i++ {
 		for k, v := range dictionary {
-			if k == uni[i] {
+			if k == bigrams[i] {
 				fmt.Println("i route: ", v)
 				fmt.Println("k: ", k)
 				fmt.Println("v: ", v)
-				ret = append(ret, v...)
 			}
 		}
+
 	}
-	fmt.Println("ret: ", ret)
 	fmt.Println("out")
+
+	/* test
+	a := internal.Question()
+	fmt.Println("a:", a)
+
+	for k, v := range a {
+		fmt.Println("k: ", k)
+		fmt.Println("v: ", v)
+	}
+	*/
+
 }
 
-// create ngram for testFunc
+// parse hiragana func
 func ngram(tgtText string, n int) ([]string, error) {
 	spltText := strings.Split(tgtText, "")
 	var ngrams []string
