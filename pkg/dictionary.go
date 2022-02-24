@@ -63,7 +63,7 @@ func Dictionary() map[string][]string {
 		"しぃ": {"syi"},
 		"しゅ": {"syu", "shu"},
 		"しぇ": {"sye", "she"},
-		"しょ": {"sya", "sho"},
+		"しょ": {"syo", "sho"},
 		"すぁ": {"swa"},
 		"すぃ": {"swi"},
 		"すぅ": {"swu"},
@@ -187,7 +187,7 @@ func Dictionary() map[string][]string {
 		"みょ": {"myo"},
 		"や":  {"ya"},
 		"ゆ":  {"yu"},
-		"よ":  {"yu"},
+		"よ":  {"yo"},
 		"ゃ":  {"lya", "xya"},
 		"ゅ":  {"lyu", "xyu"},
 		"ょ":  {"lyo", "xyo"},
@@ -205,6 +205,9 @@ func Dictionary() map[string][]string {
 		"を":  {"wo"},
 		"ん":  {"n", "nn", "n'", "xn"},
 		"ゎ":  {"lwa", "xwa"},
+		"ー":  {"-", "ー"},
+		"！":  {"!", "！"},
+		"？":  {"?", "？"},
 	}
 	return d
 }
