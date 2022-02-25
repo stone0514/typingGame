@@ -18,7 +18,7 @@ func main() {
 	*/
 
 	q := internal.Question()
-	//d := pkg.Dictionary()
+	d := pkg.Dictionary()
 
 	//score := 0
 	num := 1
@@ -35,6 +35,7 @@ func main() {
 			var (
 				uni string
 				bi  string
+				ret []string
 			)
 
 			for i < utf8.RuneCountInString(v) {
@@ -46,8 +47,16 @@ func main() {
 				} else {
 					bi = ""
 				}
-				return
+				if val, ok := d[bi]; ok {
+					i += 2
+					ret = append(ret, bi)
+				} else {
+					i++
+					ret = append(ret, uni)
+				}
 			}
+			fmt.Println("ret: ", ret)
+			return
 		}
 	}
 }
