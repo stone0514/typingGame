@@ -41,7 +41,7 @@ func main() {
 				uni = string(pkg.GetRune(v, i))
 				fmt.Println("uni : ", uni)
 				if i+1 < utf8.RuneCountInString(v) {
-					bi = string(pkg.GetRune(v, i))
+					bi = string(pkg.GetRune(v, i)) + string(pkg.GetRune(v, i+1))
 					fmt.Println("bi : ", bi)
 				} else {
 					bi = ""
