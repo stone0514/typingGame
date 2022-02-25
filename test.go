@@ -47,7 +47,7 @@ func main() {
 				} else {
 					bi = ""
 				}
-				if val, ok := d[bi]; ok {
+				if _, ok := d[bi]; ok {
 					i += 2
 					ret = append(ret, bi)
 				} else {
