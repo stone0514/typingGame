@@ -1,5 +1,18 @@
 package internal
 
+// Question Document
+/*
+ *------------------------------------------------------
+ * @brief Question
+ *
+ * @pram
+ *
+ * @return map[string]string
+ *
+ * @rules
+ *
+ *------------------------------------------------------
+ */
 func Question() map[string]string {
 
 	q := map[string]string{
