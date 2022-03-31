@@ -5,6 +5,7 @@
 ## Description
 
 * You can choose the gameMode want to play from two modes
+* English or Japanese Mode
 
 ## Usage
 
