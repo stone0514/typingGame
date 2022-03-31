@@ -5,10 +5,9 @@ import "fmt"
 // Result Document
 /*
  *---------------------------------------------------
- * @brief     Result
- *            showResult
+ * @brief        Result
  *
- * @param[in] int score
+ * @param[in]    int score
  *
  * @return[want]
  *
