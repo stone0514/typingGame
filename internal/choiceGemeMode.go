@@ -8,15 +8,15 @@ import (
 // ChoiceGameMode Document
 /*
  *---------------------------------------------
- * @brief     ChoiceGameMode
- *            Select GameMode
+ * @brief           ChoiceGameMode
+ *                  Select GameMode
  *
- * @ param[1] io.Reader
+ * @ param[in]      io.Reader
  *
- * @ return   string filePath
+ * @ return[want]   string filePath
  *
- * @rules     input key 1: EnglishMode, 2: JapaneseMode
- *            input other key 1: EnglishMode
+ * @rules           input key 1: EnglishMode, 2: JapaneseMode
+ *                  input other key 2: JapaneseMode
  *---------------------------------------------
  */
 func ChoiceGameMode(stdin io.Reader) string {

@@ -10,7 +10,7 @@ import "fmt"
  *
  * @param[in] int score
  *
- * @return
+ * @return[want]
  *
  * @rules
  *
