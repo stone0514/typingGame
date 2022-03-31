@@ -1,7 +1,25 @@
 package internal
 
-import "strings"
+import (
+	"strings"
+)
 
+// CorrectWrongJudgement Document
+/*
+ *-----------------------------------------------------------
+ * @brief CorrectWrongJudgement
+ *
+ * @param[in]    map[string][]string
+ * @param[in]    []string
+ * @param[in]    string
+ *
+ * @return[want] bool
+ * @return[want] string
+ *
+ * @rules
+ *
+ *-----------------------------------------------------------
+ */
 func CorrectWrongJudgement(m map[string][]string, arr []string, str string) (bool, string) {
 
 	judgeList := map[int][]string{}

@@ -11,9 +11,9 @@ import (
  * @brief        Input
  *               InputReader
  *
- * @param[in] P1 io.Reader
+ * @param[in]    io.Reader
  *
- * @return
+ * @return[want] chan string
  *
  * @rules
  *

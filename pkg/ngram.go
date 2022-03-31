@@ -16,7 +16,8 @@ import (
  * @return   P1: []string
  *           P2: error
  *
- * @rules    +create ngram
+ * @rules    Not used this typingGame
+ *           +create ngram
  *           +param:P2 int(1) = uni-gram
  *           +param:P2 int(2) = bi-gram
  *           +param:P2 int(3) = tri-gram

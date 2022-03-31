@@ -10,11 +10,12 @@ import (
  *------------------------------------------------------------------
  * @brief GenerationInputPattern
  *
- * @param []string              target
+ * @param[in]     []string             target
  *
- * @return map[string][]string  concatLIst
+ * @return[want]  map[string][]string  concatLIst
  *
  * @rules
+ * after reading target ([]string)
  *
  *------------------------------------------------------------------
  */

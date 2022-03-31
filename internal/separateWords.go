@@ -11,9 +11,9 @@ import (
  *-----------------------------------------------------
  * @brief
  *
- * @param  string    words
+ * @param[in]    string    words
  *
- * @return []string
+ * @return[want] []string
  *
  * @rules
  *

@@ -9,7 +9,6 @@ import (
 /*
  *----------------------------------------
  * @brief    Shuffle
- *           stringSlice ShuffleFunc
  *
  * @Pram[in] []string
  *

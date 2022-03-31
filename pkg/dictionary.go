@@ -1,5 +1,18 @@
 package pkg
 
+// Dictionary Document
+/*
+ *---------------------------------------
+ * @brief         Dictionary
+ *
+ * @param[in]
+ *
+ * @ return[want] map[string][]string
+ *
+ * @rules
+ *
+ *---------------------------------------
+ */
 func Dictionary() map[string][]string {
 
 	d := map[string][]string{

@@ -8,7 +8,7 @@ import "flag"
  * @brief    Init
  *           setTimerInitialization
  *
- * @param[1] int time
+ * @param[in] int time
  *
  * @return
  *
