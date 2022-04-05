@@ -21,15 +21,14 @@ import (
  */
 func ChoiceGameMode(stdin io.Reader) string {
 	val := bufio.NewScanner(stdin)
+
 	switch val.Scan() {
 	case val.Text() == "1":
 		return "internal/textData/words.txt"
 	case val.Text() == "2":
-		// TODO return "Japanese"
-		return "internal/textData/romazi.txt"
+		return "Japanese"
 		// other inputs
 	default:
-		// TODO return "Japanese"
-		return "internal/textData/words.txt"
+		return "Japanese"
 	}
 }

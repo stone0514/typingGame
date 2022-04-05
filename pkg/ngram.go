@@ -24,7 +24,6 @@ import (
  *
  *----------------------------------------------------------------------
  */
-
 func Ngram(tgtText string, n int) ([]string, error) {
 	var ngrams []string
 	spltText := strings.Split(tgtText, "")

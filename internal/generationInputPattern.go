@@ -1,8 +1,9 @@
 package internal
 
 import (
-	"github.com/stone0514/typingGame/pkg"
 	"unicode/utf8"
+
+	"github.com/stone0514/typingGame/pkg"
 )
 
 // GenerationInputPattern Document
