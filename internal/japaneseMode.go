@@ -28,9 +28,11 @@ import (
  */
 func JapaneseMode() {
 
+	//parallel processing of the read and input string in the channel
 	ch := pkg.Input(os.Stdin)
 retry:
-	t := int(90)
+	//create timeLimit
+	t := JaTime
 	timeLimit := time.After(time.Duration(t) * time.Second)
 
 	fmt.Println("\n---Go!JapaneseMode!(timelimit:", t, "sec)---")
@@ -49,6 +51,7 @@ retry:
 		concatList := GenerationInputPattern(ret)
 		select {
 		case x := <-ch:
+			//correct/wrong judgement
 			j, s := CorrectWrongJudgement(concatList, ret, x)
 			if j && s == "" {
 				score = score + len(ret)
@@ -57,6 +60,7 @@ retry:
 			} else {
 				fmt.Print("-----Failure!-----\n")
 			}
+			//processing ends when the time limit
 		case <-timeLimit:
 			fmt.Printf("\n----- time up -----\n")
 			i = false
@@ -71,8 +75,10 @@ retry:
 
 	retryFlg := <-ch
 
+	//if the last character is "e" process ends
 	if strings.HasSuffix(retryFlg, "e") {
 		fmt.Print("----- End -----")
+		//in other cases execute process again
 	} else {
 		fmt.Print("-- Ready --")
 		time.Sleep(time.Second * 1)

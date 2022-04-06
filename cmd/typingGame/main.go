@@ -30,13 +30,17 @@ func main() {
 	fmt.Printf("\n-----choice play mode-----\n")
 	fmt.Printf("-----select game start-----\n")
 	fmt.Printf("---1:English, 2:Japanese---\n")
+	//wait for input
 	gameMode := internal.ChoiceGameMode(os.Stdin)
 
 	switch gameMode {
-	case "internal/textData/words.txt":
+	//input = "1"
+	case internal.En:
 		internal.EnglishMode(gameMode)
-	case "Japanese":
+	//input = "2"
+	case internal.Ja:
 		internal.JapaneseMode()
+	//other inputs
 	default:
 		internal.JapaneseMode()
 	}

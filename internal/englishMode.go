@@ -32,7 +32,7 @@ func EnglishMode(gameMode string) {
 	ch := pkg.Input(os.Stdin)
 retry:
 	//create timeLimit
-	t := int(75)
+	t := EnTime
 
 	timeLimit := time.After(time.Duration(t) * time.Second)
 
@@ -73,8 +73,10 @@ retry:
 
 	retryFlg := <-ch
 
+	//if the last character is "e" process ends
 	if strings.HasSuffix(retryFlg, "e") {
 		fmt.Print("----- End -----")
+		//in other cases execute process again
 	} else {
 		fmt.Print("-- Ready --")
 		time.Sleep(time.Second * 1)
