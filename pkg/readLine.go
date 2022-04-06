@@ -25,7 +25,7 @@ func ReadLine(filePath string) []string {
 	f, err := os.Open(filePath)
 	//handle errors while opening
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "filePath %s could not read", filePath, err)
+		fmt.Printf("filePath %v could not read", filePath)
 		os.Exit(1)
 	}
 

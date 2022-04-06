@@ -15,7 +15,8 @@ import (
  *
  * @ return[want]   string filePath
  *
- * @rules           input key 1: EnglishMode, 2: JapaneseMode
+ * @rules           after receiving the input
+ *                  input key 1: EnglishMode, 2: JapaneseMode
  *                  input other key 2: JapaneseMode
  *---------------------------------------------
  */
@@ -24,11 +25,11 @@ func ChoiceGameMode(stdin io.Reader) string {
 
 	switch val.Scan() {
 	case val.Text() == "1":
-		return "internal/textData/words.txt"
+		return En
 	case val.Text() == "2":
-		return "Japanese"
-		// other inputs
+		return Ja
+	// other inputs
 	default:
-		return "Japanese"
+		return Ja
 	}
 }

@@ -11,11 +11,12 @@ package pkg
  * @return[want] rune
  *
  * @rules
- *  convert from string to rune
+ *
  *
  *---------------------------------------------------
  */
 func GetRune(s string, i int) rune {
+	//make s array
 	rs := []rune(s)
 	return rs[i]
 }

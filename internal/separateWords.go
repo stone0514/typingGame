@@ -15,7 +15,7 @@ import (
  *
  * @return[want] []string
  *
- * @rules
+ * @rules        words must hiragana
  *
  *-----------------------------------------------------
  */
@@ -29,9 +29,12 @@ func SeparateWords(words string) []string {
 	i := 0
 	d := pkg.Dictionary()
 
+	//word length loop
 	for i < utf8.RuneCountInString(words) {
+		//stores i character & cast rune to string
 		uni = string(pkg.GetRune(words, i))
 		if i+1 < utf8.RuneCountInString(words) {
+			//stores i & i+1 character
 			bi = string(pkg.GetRune(words, i)) + string(pkg.GetRune(words, i+1))
 		} else {
 			bi = ""
