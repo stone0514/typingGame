@@ -53,9 +53,9 @@ retry:
 			if question == x {
 				score++
 				num++
-				fmt.Print("-----Correct!-----\n")
+				fmt.Printf("\x1b[32m%s\x1b[0m\n", "-----Correct!-----")
 			} else {
-				fmt.Print("-----Failure!-----\n")
+				fmt.Printf("\x1b[31m%s\x1b[0m\n", "-----Failure!-----")
 			}
 			//processing ends when the time limit
 		case <-timeLimit:
