@@ -6,13 +6,15 @@
 
 * You can choose the gameMode want to play from two modes
 * English or Japanese Mode
-* After the time limit expires, you can choose to Retry or End
+* After the time limit expires, you can be selected by the following keys
+* Retry                             [any key]
+* Display Top10 scores in a Ranking [r]
+* End                               [e]
 
 ## Usage
 
 * $ `git clone https://github.com/stone0514/typingGame.git`
-* $ `cd cmd/typingGame`
-* $ `go run ./main.go`
+* $ `go run ./cmd/typingGame/main.go`
 
 * if there is no go.mod under the typingGame
 * enter the following command on the typingGame

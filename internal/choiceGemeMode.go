@@ -2,6 +2,7 @@ package internal
 
 import (
 	"bufio"
+	"errors"
 	"io"
 )
 
@@ -20,16 +21,27 @@ import (
  *                  input other key 2: JapaneseMode
  *---------------------------------------------
  */
-func ChoiceGameMode(stdin io.Reader) string {
+func ChoiceGameMode(stdin io.Reader) (string, error) {
 	val := bufio.NewScanner(stdin)
+	var gameMode string
 
-	switch val.Scan() {
-	case val.Text() == "1":
-		return En
-	case val.Text() == "2":
-		return Ja
+	if !val.Scan() {
+		return "", errors.New("unable to scan input")
+	}
+
+	switch val.Text() {
+	case "1":
+		gameMode = En
+	case "2":
+		gameMode = Ja
 	// other inputs
 	default:
-		return Ja
+		gameMode = Ja
 	}
+
+	if err := val.Err(); err != nil {
+		return "", err
+	}
+
+	return gameMode, nil
 }

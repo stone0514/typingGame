@@ -3,6 +3,7 @@ package pkg
 import (
 	"bufio"
 	"io"
+	"strings"
 )
 
 // Input Document
@@ -19,16 +20,22 @@ import (
  *
  *-------------------------------------------------
  */
-func Input(stdin io.Reader) <-chan string {
-	// create chan
-	channel := make(chan string)
+func Input(r io.Reader) <-chan string {
+	// create ch
+	ch := make(chan string)
 	// go routine
 	go func() {
 		// read the typed line
-		strings := bufio.NewScanner(stdin)
-		for strings.Scan() {
-			channel <- strings.Text()
+		reader := bufio.NewReader(r)
+		for {
+			word, err := reader.ReadString('\n')
+			if err != nil {
+				close(ch)
+				return
+			}
+			word = strings.TrimSpace(word) //空白文字を削除
+			ch <- word
 		}
 	}()
-	return channel
+	return ch
 }
